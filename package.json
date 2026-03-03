@@ -1,0 +1,29 @@
+{
+  "name": "markdown-to-html",
+  "version": "1.0.0",
+  "description": "Convert Markdown to beautiful standalone HTML. Pure JS parser, GitHub themes, live reload server. Zero dependencies.",
+  "type": "module",
+  "bin": {
+    "markdown-to-html": "./index.js",
+    "md2html": "./index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "developer-tools",
+    "cli",
+    "nodejs",
+    "zero-dependencies",
+    "markdown",
+    "html",
+    "converter",
+    "documentation",
+    "static-site"
+  ],
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "README.md"
+  ]
+}
