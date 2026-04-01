@@ -1,3 +1,5 @@
+![Banner](banner.svg)
+
 # markdown-to-html
 
 Convert Markdown to beautiful standalone HTML. Pure JS parser, GitHub themes, live reload server. **Zero dependencies** — built-in Node.js modules only.
