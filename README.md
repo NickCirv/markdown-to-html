@@ -1,99 +1,51 @@
-![Banner](banner.svg)
+<div align="center">
 
 # markdown-to-html
 
-Convert Markdown to beautiful standalone HTML. Pure JS parser, GitHub themes, live reload server. **Zero dependencies** — built-in Node.js modules only.
+**Convert Markdown to standalone HTML — zero dependencies, three themes, live reload.**
+
+[![License](https://img.shields.io/badge/license-MIT-brightgreen?labelColor=0B0A09)](LICENSE)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen?labelColor=0B0A09)](package.json)
+[![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen?labelColor=0B0A09)](package.json)
+
+</div>
 
 ## Install
 
 ```bash
-npm install -g markdown-to-html
+npx github:NickCirv/markdown-to-html <file.md>
 ```
 
-Or run without installing:
+Or install globally:
 
 ```bash
-npx markdown-to-html <file.md>
+npm install -g github:NickCirv/markdown-to-html
 ```
 
 ## Usage
 
 ```bash
-md2html <file.md>                        # Convert to HTML, output to stdout
-md2html <file.md> -o <file.html>         # Write to file
-md2html <directory>                      # Convert all .md files in directory
-md2html <file.md> --watch                # Watch and auto-rebuild on change
-md2html <file.md> --serve 3000          # Serve with live reload
+md2html README.md                        # Convert to stdout
+md2html README.md -o README.html         # Write to file
+md2html README.md --theme dark --toc     # Dark theme + table of contents
+md2html README.md --serve 3000          # Serve with live reload
+md2html ./docs                           # Convert all .md files in a directory
 ```
-
-Both `md2html` and `markdown-to-html` are available as commands.
-
-## Options
 
 | Flag | Description |
 |------|-------------|
 | `-o, --output <file>` | Write output to file instead of stdout |
-| `--theme <name>` | Theme: `github` (default), `dark`, `light` |
+| `--theme <name>` | `github` (default), `dark`, `light` |
 | `--title <text>` | HTML page title (default: first h1) |
 | `--toc` | Generate table of contents |
 | `--no-highlight` | Skip language labels on code blocks |
 | `--watch` | Watch file and rebuild on change |
 | `--serve [port]` | Serve with live reload (default: 3000) |
-| `-h, --help` | Show help |
-| `-v, --version` | Show version |
 
-## Themes
+## What it does
 
-**`github`** — GitHub-style light theme (default)
+Converts Markdown to a fully standalone HTML file with all CSS inlined — no CDN, no external requests, no build step. Ships three themes (GitHub light, GitHub dark, clean serif) and a built-in live-reload server for editing docs in the browser. Handles headings, tables, task lists, footnotes, nested lists, code blocks with language labels, and raw HTML passthrough. Uses only Node.js built-in modules.
 
-**`dark`** — GitHub dark theme
+---
 
-**`light`** — Clean minimal serif theme
-
-## Examples
-
-```bash
-# Convert with dark theme and table of contents
-md2html README.md --theme dark --toc -o README.html
-
-# Serve with live reload while editing
-md2html docs/guide.md --serve 8080
-
-# Watch and rebuild to a file
-md2html README.md --watch -o README.html --theme dark
-
-# Convert all .md files in a directory
-md2html ./docs
-```
-
-## Supported Markdown
-
-- Headings (`#` through `######`, setext style)
-- **Bold**, *italic*, ***bold italic***
-- ~~Strikethrough~~
-- `Inline code`
-- Code blocks with optional language label
-- Blockquotes
-- Ordered and unordered lists (nested up to 3 levels)
-- Task lists (`- [ ]` and `- [x]`)
-- Links `[text](url)` and `[text](url "title")`
-- Auto-links `<https://url>` and `<email@example.com>`
-- Images `![alt](url)` and `![alt](url "title")`
-- Horizontal rules (`---`, `***`)
-- Tables with column alignment
-- Hard line breaks (2 trailing spaces)
-- Raw HTML passthrough
-- Footnotes (`[^1]` references and `[^1]: definition`)
-- Table of contents (via `--toc`)
-
-## Output
-
-Generates fully standalone HTML files with all CSS inlined — no external dependencies, no CDN calls, no JavaScript (except for live reload when using `--serve`).
-
-## Requirements
-
-Node.js >= 18
-
-## License
-
-MIT
+<sub>Zero dependencies · Node ≥18 · MIT · by <a href="https://github.com/NickCirv">NickCirv</a></sub>
